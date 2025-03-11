@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Современный калькулятор</title>
+    <link rel="stylesheet" href="media/styles.css"/>
+    <script src="media/script.js" defer></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="input-wrapper">
+            <input type="text" id="number1" class="inputField" placeholder="Введите число"/>
+            <div class="error-message"></div>
+        </div>
+
+        <select class="operationField" id="operation">
+            <option value="+">+</option>
+            <option value="-">−</option>
+            <option value="*">×</option>
+            <option value="/">÷</option>
+        </select>
+
+        <div class="input-wrapper">
+            <input type="text" id="number2" class="inputField" placeholder="Введите число"/>
+            <div class="error-message"></div>
+        </div>
+    </div>
+
+    <div class="buttonContainer">
+        <button class="button" onclick="onButtonClick()">Вычислить</button>
+    </div>
+
+    <div class="resultContainer">
+        <div class="result-wrapper">
+            <div id="history" class="history"></div>
+            <textarea class="resultField" id="results" readonly></textarea>
+        </div>
+    </div>
+</body>
+
+</html>

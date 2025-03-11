@@ -1,0 +1,176 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    font-family: 'Arial', sans-serif;
+}
+
+.container, .buttonContainer, .resultContainer {
+    width: 100%;
+    max-width: 600px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    margin: 5px 0;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+}
+
+/* Стили для больших экранов (по умолчанию) */
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    padding: 20px;
+}
+
+.input-wrapper {
+    flex: 1;
+    position: relative;
+}
+
+.operationField {
+    width: 80px;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.inputField {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.buttonContainer {
+    padding: 15px;
+}
+
+.resultContainer {
+    padding: 20px;
+}
+
+.inputField, .operationField, .button, .resultField {
+    background: rgba(255, 255, 255, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 15px;
+    color: #ffffff;
+    font-weight: 500;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.inputField {
+    height: 45px;
+    font-size: 16px;
+    padding: 10px 15px;
+}
+
+.operationField {
+    height: 45px;
+    font-size: 16px;
+    padding: 5px;
+}
+
+.button {
+    width: 100%;
+    height: 45px;
+    font-size: 16px;
+    text-transform: uppercase;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.25);
+    letter-spacing: 1px;
+}
+
+.button:hover {
+    background: rgba(255, 255, 255, 0.35);
+    transform: translateY(-2px);
+}
+
+.resultField {
+    width: 100%;
+    min-height: 50px;
+    font-size: 18px;
+    padding: 15px;
+    resize: none;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 15px;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.history {
+    margin-bottom: 15px;
+}
+
+.history-item {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 14px;
+    padding: 8px;
+    margin-bottom: 5px;
+    border-left: 3px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+.history-item:hover {
+    border-left-color: rgba(255, 255, 255, 0.4);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Стили для ошибок */
+.inputField.error {
+    border-color: #ff6b6b;
+    background: rgba(255, 107, 107, 0.1);
+    animation: shake 0.5s;
+}
+
+.error-message {
+    color: #ff6b6b;
+    font-size: 12px;
+    margin-top: 5px;
+    display: none;
+    position: absolute;
+    background: rgba(255, 107, 107, 0.1);
+    padding: 8px 12px;
+    border-radius: 8px;
+    backdrop-filter: blur(5px);
+}
+
+.error-message.visible {
+    display: block;
+}
+
+/* Стили для плейсхолдеров */
+::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+/* Стили для выделения */
+::selection {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+}
+
+/* Мобильная версия */
+@media screen and (max-width: 600px) {
+    .container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .operationField {
+        width: 100%;
+        margin: 10px 0;
+    }
+    
+    .inputField, .operationField, .button {
+        font-size: 14px;
+    }
+}
